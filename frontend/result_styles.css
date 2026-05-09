@@ -1,0 +1,208 @@
+.breakdown-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.breakdown-item {
+    padding: 16px;
+    background: #f8fafc;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+}
+
+.breakdown-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #64748b;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.breakdown-score-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.breakdown-score {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1e40af;
+    min-width: 70px;
+}
+
+.breakdown-score-container .progress-bar {
+    flex: 1;
+    height: 10px;
+}
+
+.breakdown-score-container .progress-fill {
+    height: 100%;
+    background: #1e40af;
+    border-radius: 5px;
+    transition: width 0.8s ease;
+}
+
+.result-card {
+    background: #f8fafc;
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #e5e7eb;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #334155;
+}
+
+.risk-score {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.score-value {
+    font-size: 48px;
+    font-weight: 700;
+    color: #1e40af;
+    margin: 12px 0;
+    line-height: 1;
+}
+
+.risk-label {
+    font-size: 18px;
+    font-weight: 700;
+    padding: 10px 24px;
+    border-radius: 20px;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.risk-label.high {
+    background: #dc2626;
+    color: white;
+}
+
+.risk-label.medium {
+    background: #f59e0b;
+    color: white;
+}
+
+.risk-label.low {
+    background: #10b981;
+    color: white;
+}
+
+.recommendation {
+    font-size: 14px;
+    color: #991b1b;
+    font-weight: 600;
+    padding: 16px;
+    background: #fee2e2;
+    border-left: 4px solid #dc2626;
+    border-radius: 8px;
+    line-height: 1.6;
+}
+
+.feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.feature-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 14px;
+    background: #f8fafc;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #475569;
+    border: 1px solid #e5e7eb;
+}
+
+.feature-item span:last-child {
+    color: #1e40af;
+    font-weight: 700;
+}
+
+.weights {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.weight-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 14px;
+    background: #f8fafc;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #475569;
+    border: 1px solid #e5e7eb;
+}
+
+.weight-item span:last-child {
+    color: #1e40af;
+    font-weight: 700;
+}
+
+.feedback-section {
+    margin-top: 1rem;
+}
+
+.feedback-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 1rem;
+}
+
+.feedback-btn {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    background: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    opacity: 0.5;
+}
+
+.feedback-btn:hover {
+    opacity: 1;
+}
+
+.feedback-btn.accept {
+    border-color: #10b981;
+    color: #10b981;
+}
+
+.feedback-btn.accept:hover {
+    background: #10b981;
+    color: white;
+}
+
+.feedback-btn.review {
+    border-color: #f59e0b;
+    color: #f59e0b;
+}
+
+.feedback-btn.review:hover {
+    background: #f59e0b;
+    color: white;
+}
+
+.feedback-btn.reject {
+    border-color: #dc2626;
+    color: #dc2626;
+}
+
+.feedback-btn.reject:hover {
+    background: #dc2626;
+    color: white;
+}

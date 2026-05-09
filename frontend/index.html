@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oral Cancer AI - Clinical Decision Support</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <div>
+                <div class="header-title">Oral Cancer AI</div>
+                <div class="header-subtitle">Support system for decisions, predictions and risk assessment</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="dashboard-layout">
+        <div class="left-panel">
+            <div class="card">
+                <h2>Upload Images</h2>
+                <form id="assessmentForm">
+                    <div class="form-group">
+                        <label for="intraoralImage">Intraoral Image</label>
+                        <input type="file" id="intraoralImage" name="intraoralImage" accept="image/png,image/jpeg,image/jpg">
+                    </div>
+                    <div class="form-group">
+                        <label for="histopathImage">Histopathology Image</label>
+                        <input type="file" id="histopathImage" name="histopathImage" accept="image/png,image/jpeg,image/jpg">
+                    </div>
+                </div>
+            
+            <div class="card">
+                <h2>Patient Information</h2>
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" id="age" name="age" min="1" max="120" placeholder="Enter age">
+                </div>
+
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <select id="gender" name="gender">
+                        <option value="">Select gender</option>
+                        <option value="0">Male</option>
+                        <option value="1">Female</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="familyHistory">Family History of Cancer</label>
+                    <select id="familyHistory" name="familyHistory">
+                        <option value="">Select</option>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Lifestyle Factors</h2>
+                <div class="form-group">
+                    <label for="smoking">Smoking</label>
+                    <select id="smoking" name="smoking">
+                        <option value="">Select</option>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="tobacco">Tobacco Use</label>
+                    <select id="tobacco" name="tobacco">
+                        <option value="">Select</option>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="alcohol">Alcohol Use</label>
+                    <select id="alcohol" name="alcohol">
+                        <option value="">Select</option>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Clinical Symptoms</h2>
+                <div class="form-group">
+                    <label for="oralLesions">Oral Lesions</label>
+                    <select id="oralLesions" name="oralLesions">
+                        <option value="">Select</option>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="unexplainedBleeding">Unexplained Bleeding</label>
+                    <select id="unexplainedBleeding" name="unexplainedBleeding">
+                        <option value="">Select</option>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="difficultySwallowing">Difficulty Swallowing</label>
+                    <select id="difficultySwallowing" name="difficultySwallowing">
+                        <option value="">Select</option>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="patches">White/Red Patches</label>
+                    <select id="patches" name="patches">
+                        <option value="">Select</option>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+            </div>
+
+            <button type="submit" id="submitBtn">
+                <span id="btnText">Analyze Risk</span>
+                <span id="btnLoader" class="loader" style="display:none;"></span>
+            </button>
+            </form>
+            <div id="error" class="error"></div>
+        </div>
+
+        <div class="right-panel">
+            <div class="card">
+                <h2>About This Assessment</h2>
+                <div class="info-section">
+                    <p>This system combines intraoral imaging, histopathology analysis, and clinical features through a multimodal fusion framework to perform oral cancer risk assessment, prediction, and decision support.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>How It Works</h2>
+                <div class="info-section">
+                    <div class="step-item">
+                        <span class="step-number">1</span>
+                        <span>Upload clear image of oral lesion</span>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-number">2</span>
+                        <span>Fill patient information and risk factors</span>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-number">3</span>
+                        <span>AI analyzes image and clinical data</span>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-number">4</span>
+                        <span>Receive comprehensive risk assessment</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Clinical Guidelines</h2>
+                <div class="info-section">
+                    <ul class="guideline-list">
+                        <li>Ensure image is well-lit and focused</li>
+                        <li>Capture entire lesion area</li>
+                        <li>Provide accurate patient history</li>
+                        <li>Results are for clinical decision support only</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

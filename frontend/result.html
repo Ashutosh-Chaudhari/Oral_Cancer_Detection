@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assessment Results - Oral Cancer AI</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="result_styles.css">
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <div>
+                <div class="header-title">Oral Cancer AI</div>
+                <div class="header-subtitle">Support system for decisions, predictions and risk assessment</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="dashboard-layout">
+        <div class="left-panel">
+            <div class="card">
+                <h2>Risk Breakdown</h2>
+                <div class="breakdown-section">
+                    <div class="breakdown-item">
+                        <div class="breakdown-label">Intraoral Image Analysis</div>
+                        <div class="breakdown-score-container">
+                            <div class="breakdown-score" id="intraoralScore">--</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="intraoralProgress"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="breakdown-item">
+                        <div class="breakdown-label">Histopathology Analysis</div>
+                        <div class="breakdown-score-container">
+                            <div class="breakdown-score" id="histopathScore">--</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="histopathProgress"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="breakdown-item">
+                        <div class="breakdown-label">Clinical Risk Factors</div>
+                        <div class="breakdown-score-container">
+                            <div class="breakdown-score" id="clinicalScore">--</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="clinicalProgress"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Model Confidence</h2>
+                <div class="weights">
+                    <div class="weight-item">
+                        <span id="confidence">--</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Clinical Risk Factors</h2>
+                <div id="featureImportance" class="feature-list"></div>
+            </div>
+
+            <div class="card">
+                <h2>Doctor Feedback</h2>
+                <div class="feedback-section">
+                    <div class="feedback-buttons">
+                        <button class="feedback-btn accept" id="acceptBtn">Accept</button>
+                        <button class="feedback-btn review" id="reviewBtn">Review</button>
+                        <button class="feedback-btn reject" id="rejectBtn">Reject</button>
+                    </div>
+                    <div id="reasonSection" style="display: none; margin-top: 1rem;">
+                        <label for="feedbackReason">Reason:</label>
+                        <select id="feedbackReason" style="width: 100%; padding: 0.5rem; margin-top: 0.5rem;">
+                            <option value="">Select reason</option>
+                            <option value="image_quality">Image quality issue</option>
+                            <option value="not_relevant">Not relevant image</option>
+                            <option value="region_mismatch">Suspicious region mismatch</option>
+                            <option value="clinical_mismatch">Clinical mismatch</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div style="margin-top: 1rem;">
+                        <label for="feedbackNotes">Add remarks (optional):</label>
+                        <textarea id="feedbackNotes" rows="3" style="width: 100%; padding: 0.5rem; margin-top: 0.5rem;"></textarea>
+                    </div>
+                    <button id="submitFeedback" class="back-btn" style="margin-top: 1rem; width: 100%;">Submit Feedback</button>
+                    <div id="feedbackMessage" style="margin-top: 1rem; display: none; color: green; text-align: center;"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-panel">
+            <div class="card" style="padding: 1rem;">
+                <h2>Final Risk Assessment</h2>
+                <div class="risk-score">
+                    <div class="score-value" id="finalScore">--</div>
+                    <div class="risk-label" id="finalRiskLabel">--</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Recommendation</h2>
+                <p id="recommendation" class="recommendation">--</p>
+            </div>
+
+            <div class="card">
+                <h2>Assessment Summary</h2>
+                <div class="result-card">
+                    <p id="summary">--</p>
+                </div>
+            </div>
+
+            <div class="card" id="heatmapCard" style="display: none;">
+                <h2>AI Explanation (Grad-CAM)</h2>
+                <img id="heatmapImage" src="" alt="Heatmap" style="width: 100%; border-radius: 8px;">
+                <p style="font-size: 12px; color: #64748b; margin-top: 8px;">Highlighted regions show areas influencing the AI's decision</p>
+            </div>
+
+            <a href="index.html" class="back-btn">New Assessment</a>
+        </div>
+    </div>
+
+    <script src="result.js"></script>
+</body>
+</html>

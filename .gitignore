@@ -1,0 +1,63 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+.Python
+build/
+dist/
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+.installed.cfg
+MANIFEST
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+.env
+
+# IDE / Editor
+.idea/
+*.swp
+*.swo
+*~
+
+# Claude Code local cache
+.claude/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Backup / temp files
+*.backup
+*.bak
+*.tmp
+*_temp.py
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs
+*.log
+
+# Project-specific
+backend/feedback_images/
+static/heatmap_*.jpg
+
+# Full dataset (only a small sample is checked in)
+data/**/train/
+data/**/test/
